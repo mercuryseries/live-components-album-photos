@@ -1,0 +1,46 @@
+<div
+    {{ attributes }}
+>
+    {{ form_start(form) }}
+        <div class="row">
+            <div class="col-4">
+                {{ form_row(form.title, {
+                    label: false,
+                    attr: {
+                        placeholder: 'Give your album a title'
+                    }
+                }) }}
+            </div>
+        </div>
+
+        <table class="table table-borderless form-no-mb">
+            <thead>
+                <tr>
+                    <td class="ps-0">Photos</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for photo_form in form.photos %}
+                    <tr>
+                        <td class="ps-0">
+                            {{ form_row(photo_form.url, {
+                                label: false,
+                                row_attr: {class: 'mb-1'},
+                                attr: {
+                                    placeholder: 'Enter the photo URL here...'
+                                }
+                            }) }}
+                        </td>
+                        <td>
+                            {{ form_row(photo_form.vars.button_delete, {label: 'X', attr: {class: 'btn btn-outline-danger'}}) }}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {{ form_widget(form.photos.vars.button_add, {label: '+ Add Photo', attr: {class: 'btn btn-outline-primary'}}) }}
+
+        <button type="submit" class="btn btn-success" formnovalidate>Save</button>
+    {{ form_end(form) }}
+</div>

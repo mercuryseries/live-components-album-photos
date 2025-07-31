@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: PhotoRepository::class)]
-#[ORM\Table(name: 'albums')]
+#[ORM\Table(name: 'photos')]
 class Photo
 {
     #[ORM\Id]
@@ -15,7 +15,8 @@ class Photo
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column]
+    #[Assert\NotBlank]
     private ?string $url = null;
 
     #[ORM\ManyToOne(inversedBy: 'photos')]

@@ -7,7 +7,7 @@ use App\Form\PhotoType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\UX\LiveComponent\Form\Type\LiveCollectionType;
 
 class AlbumType extends AbstractType
 {
@@ -15,13 +15,13 @@ class AlbumType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('photos', CollectionType::class, [
+            ->add('photos', LiveCollectionType::class, [
                 'entry_type' => PhotoType::class,
+                'entry_options' => ['label' => false],
+                'label' => false,
                 'allow_add' => true,
                 'allow_delete' => true,
                 'by_reference' => false,
-                'prototype' => true,
-                'label' => false,
             ])
         ;
     }

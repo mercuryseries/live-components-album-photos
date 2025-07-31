@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Album!{% endblock %}
+
+{% block body %}
+    <div class="p-5 my-4 bg-primary text-white rounded-3">
+        <div class="container-fluid py-5">
+            <h1>Application Démo: Création d'albums</h1>
+        </div>
+    </div>
+
+    <twig:AlbumForm :form="form" :album="album" />
+{% endblock %}
