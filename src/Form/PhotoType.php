@@ -14,7 +14,6 @@ class PhotoType extends AbstractType
     {
         $builder
             ->add('imageFile', FileType::class, [
-                'label' => 'Image',
                 'required' => true,
                 'mapped' => true,
             ])
