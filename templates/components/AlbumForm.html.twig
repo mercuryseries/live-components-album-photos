@@ -23,14 +23,10 @@
                 {% for photo_form in form.photos %}
                     <tr>
                         <td class="ps-0">
-                            {{ form_row(photo_form.url, {
-                                label: false,
-                                row_attr: {class: 'mb-1'},
-                                attr: {
-                                    placeholder: 'Enter the photo URL here...'
-                                }
+                            {{ form_row(photo_form.imageFile, {
+                                    label: false,
+                                    row_attr: {class: 'mb-1'},
                             }) }}
-                        </td>
                         <td>
                             {{ form_row(photo_form.vars.button_delete, {label: 'X', attr: {class: 'btn btn-outline-danger'}}) }}
                         </td>

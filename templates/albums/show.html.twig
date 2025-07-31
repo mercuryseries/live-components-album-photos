@@ -3,12 +3,12 @@
 {% block title 'Album #' ~ album.id %}
 
 {% block body %}
-    <div class="p-5 my-4 bg-black text-white rounded-3">
+    <div class="p-5 my-4 bg-secondary text-white rounded-3">
         <h1>Album #{{ album.id }}</h1>
 
         <p>Photos</p>
         {% for photo in album.photos %}
-            <img src="{{ photo.url }}" alt="{{ album.title }}" width="200"><br>
+            <img src="{{ vich_uploader_asset(photo) }}" alt="{{ album.title }}" width="200"><br><br>
         {% endfor %}
     </div>
 
