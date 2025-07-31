@@ -4,7 +4,7 @@
 
 {% block body %}
     <div class="p-5 my-4 bg-secondary text-white rounded-3">
-        <h1>Album #{{ album.id }}</h1>
+        <h1>Album #{{ album.id }}: {{ album.title }}</h1>
 
         <p>Photos</p>
         {% for photo in album.photos %}
