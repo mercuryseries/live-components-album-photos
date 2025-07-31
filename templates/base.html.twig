@@ -14,6 +14,12 @@
     </head>
     <body>
         <div class="container">
+            {% for message in app.flashes('success') %}
+                <div class="mt-4 alert alert-success">
+                    {{ message }}
+                </div>
+            {% endfor %}
+
             {% block body %}{% endblock %}
         </div>
     </body>

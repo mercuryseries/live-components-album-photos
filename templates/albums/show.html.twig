@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Album #' ~ album.id %}
+
+{% block body %}
+    <div class="p-5 my-4 bg-black text-white rounded-3">
+        <h1>Album #{{ album.id }}</h1>
+
+        <p>Photos</p>
+        {% for photo in album.photos %}
+            <img src="{{ photo.url }}" alt="{{ album.title }}" width="200"><br>
+        {% endfor %}
+    </div>
+
+    <a href="{{ path('app_albums_new') }}">&larr; Create another album!</a>
+{% endblock %}

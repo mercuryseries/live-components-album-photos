@@ -41,6 +41,8 @@ final class AlbumsController extends AbstractController
     #[Route('/albums/{id}', name: 'app_albums_show', methods: ['GET'])]
     public function show(Album $album)
     {
-        return new Response("<h1>Album #{$album->getId()}: {$album->getTitle()}</h1>");
+        return $this->render('albums/show.html.twig', [
+            'album' => $album
+        ]);
     }
 }
