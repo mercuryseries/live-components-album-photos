@@ -20,6 +20,7 @@ class Photo
 
     // NOTE: This is not a mapped field of entity metadata, just a simple property.
     #[Vich\UploadableField(mapping: 'photo_images', fileNameProperty: 'imageName', size: 'imageSize')]
+    #[Assert\NotBlank]
     private ?File $imageFile = null;
 
     #[ORM\Column(nullable: true)]
