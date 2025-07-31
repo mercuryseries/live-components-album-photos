@@ -39,8 +39,8 @@ final class AlbumsController extends AbstractController
     }
 
     #[Route('/albums/{id}', name: 'app_albums_show', methods: ['GET'])]
-    public function show()
+    public function show(Album $album)
     {
-        return new Response("<h1>Album {$album->getId()}</h1>");
+        return new Response("<h1>Album #{$album->getId()}: {$album->getTitle()}</h1>");
     }
 }
