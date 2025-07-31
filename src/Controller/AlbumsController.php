@@ -13,7 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 final class AlbumsController extends AbstractController
 {
-    #[Route('/albums/new', name: 'app_albums_new', methods: ['GET', 'POST'])]
+    #[Route('/', name: 'app_home', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $album = new Album();
