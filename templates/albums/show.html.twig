@@ -8,7 +8,7 @@
 
         <p>Photos</p>
         {% for photo in album.photos %}
-            <img src="{{ vich_uploader_asset(photo) }}" alt="{{ album.title }}" width="200"><br><br>
+            <img src="{{ vich_uploader_asset(photo) }}" alt="{{ album.title }}" width="200" class="rounded-3 shadow border border-white"><br><br>
         {% endfor %}
     </div>
 
